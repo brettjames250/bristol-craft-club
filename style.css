@@ -68,13 +68,13 @@ h1 {
 h2 {
   font-family: "Raleway", sans-serif;
   text-align: center;
-  font-size: clamp(0.8rem, 1.8rem, 4rem);
+  font-size: clamp(1rem, 3vw, 4rem);
 }
 
 h3 {
   font-family: "Raleway", sans-serif;
   text-align: left;
-  font-size: clamp(0.8rem, 3vw, 2.5rem);
+  font-size: clamp(0.8rem, 4vw, 4rem);
 }
 
 h4 {
@@ -82,11 +82,12 @@ h4 {
   font-size: clamp(0.3rem, 1.8rem, 4rem);
 }
 
-p {
+p, input, a {
   font-family: "Raleway", sans-serif;
   text-align: left;
+  line-height: 24px;
   font-size: 0.8rem;
-  font-size: clamp(0.8rem, 1rem, 10rem);
+  font-size: clamp(0.8rem, 2vw, 10rem);
 }
 
 
@@ -112,97 +113,62 @@ header {
   width: 100%;
   height: 5rem;
   display: flex;
-  z-index: 999;
   align-items: center;
-  margin: 0;
+  justify-content: center;
 }
 
 nav ul {
-  display: none;
+  display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 nav li {
-  margin-bottom: 1em;
   margin-left: 1em;
 }
 
 nav a {
-  display: flex;
   color: antiquewhite;
   text-decoration: none;
   font-size: 1rem;
-  font-family: "Fira Mono";
   text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 180ms ease-in-out;
+  opacity: 1;
+ 
 }
 
 nav a:hover {
-  color: #fe4164;
+  color: #FC9E19;
 }
 
-.toggle {
-  display: none;
-}
-
-.toggle:checked ~ nav {
-  transform: scale(1, 1);
-}
-
-.toggle:checked ~ nav a {
-  opacity: 1;
-  transition: opacity 250ms ease-in-out 350ms;
-}
-
-.toggle-label span::before {
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 2rem;
-  color: white;
-  content: "\f1e3";
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  padding: 0.5rem;
-  -webkit-font-smoothing: antialiased;
-}
-
-.toggle-label span:hover {
-  color: orangered;
-}
 
 /* Banner  */
 
 .banner {
-  height: 50rem;
   background-image: url(img/burnley.png);
-  background-position: center;
+  height: 100%;
+  background-position: center; 
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
 
 .banner h1 {
   font-family: "Zilla Slab Highlight";
-  padding: 0.8rem;
+  text-align: center;
+  padding: 6rem 0;
   z-index: 999;
-  color: white
+  color: white;
+  
 }
 
 /* ABOUT */
 
 .about {
   max-height: 560px;
-  width: 61.25rem;
-  margin: 1rem auto;
+  margin: 1rem 1.25rem;
   padding: 1rem;
-  display: flex;
+  text-align: center;
   background-color:  #E2DFDF;
   border-radius: 10px;
 }
@@ -212,10 +178,11 @@ nav a:hover {
 .items {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .items .card {
-  height: 25rem;
+  height: auto;
   width: 18.75rem;
   margin: 1rem 1.25rem;
   background-color: #E2DFDF;
@@ -235,20 +202,10 @@ nav a:hover {
   margin: 1rem;
 }
 
-.items p {
-  font-family: "Raleway", sans-serif;
-  line-height: 26px;
-  color: #34495e;
-}
-
-
 /* NEWSLETTER */
 
 .newsletter {
   background-color: #34495e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 20rem;
 }
 
@@ -256,77 +213,59 @@ nav a:hover {
   color: rgb(255, 255, 255);
   font-size: 30px;
   font-weight: 600;
+  padding-top: 3rem;
+  text-align: center;
 }
 
-.email-signup .email-field {
+.signup-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.input-format {
   width: 100%;
-  padding: 10px 20px;
-  margin: 8px 0;
-  display: inline-block;
+  padding: 10px 15px;
+  margin: 8px 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  max-width: 360px;
 }
 
 .email-signup .email-button {
-  max-width: 360px;
-  width: 100%;
-  padding: 10px 20px;
-  margin: 8px 0;
+  background-color: #FC9E19;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 /* FOOTER */
 
 .footer {
-  background: #34495e;
+  background: #E2DFDF;
   display: flex;
   justify-content: flex-end;
   width: 100%;
 }
 
 .footer p {
-  color: white;
+  color: black;
   margin: 1rem 2rem;
 }
 
 /* Small devices (landscape phones, 576px and up) */
 
 @media (min-width: 576px) {
-
-  .navigation {
-    justify-content: center;
-  }
-
-  nav {
-    all: unset;
-    display: flex;
-    align-content: flex-end;
-    justify-content: center;
-  }
-
-  .toggle-label {
-    display: none;
-  }
-
-  nav ul {
-    display: flex;
-  }
-
-  nav li {
-    margin-bottom: 0;
-  }
-
-  nav a {
-    opacity: 1;
-    position: relative;
-  }
+ 
 }
 
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
   .wrapper {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
   }
 }
@@ -335,7 +274,7 @@ nav a:hover {
 
 @media (min-width: 992px) {
   .wrapper {
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
   }
 }
@@ -344,7 +283,7 @@ nav a:hover {
 
 @media (min-width: 1200px) {
   .wrapper {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
   }
 }
